@@ -1,26 +1,12 @@
 package com.ekremozan.mapbreadcrumbs
 
-import android.app.Application
-import com.ekremozan.mapbreadcrumbs.di.component.ApplicationComponent
-import com.ekremozan.mapbreadcrumbs.di.component.DaggerApplicationComponent
-import com.ekremozan.mapbreadcrumbs.di.module.ApplicationModule
+import com.ekremozan.mapbreadcrumbs.di.component.DaggerAppComponent
+import dagger.android.AndroidInjector
+import dagger.android.DaggerApplication
 
-class BaseApplication : Application() {
+class BaseApplication : DaggerApplication() {
 
-    private lateinit var mApplicationComponent: ApplicationComponent
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication> =
+        DaggerAppComponent.builder().create(this)
 
-    override fun onCreate() {
-        super.onCreate()
-        setup()
-    }
-
-    private fun setup() {
-        mApplicationComponent = DaggerApplicationComponent.builder()
-            .applicationModule(ApplicationModule(this)).build()
-        mApplicationComponent.inject(this)
-    }
-
-    fun getApplicationComponent(): ApplicationComponent {
-        return mApplicationComponent
-    }
 }

@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -36,6 +37,9 @@ dependencies {
     //dagger
     implementation "com.google.dagger:dagger:$dagger2Version"
     kapt "com.google.dagger:dagger-compiler:$dagger2Version"
+    implementation "com.google.dagger:dagger-android:$dagger2Version"
+    implementation "com.google.dagger:dagger-android-support:$dagger2Version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger2Version"
 
     //rx
     implementation "io.reactivex.rxjava2:rxjava:$rxjava2Version"
@@ -52,13 +56,16 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion" // use -ktx for Kotlin
 
     //room
-    implementation 'androidx.room:room-runtime:2.1.0'
-    kapt 'androidx.room:room-compiler:2.1.0'
-    implementation 'androidx.room:room-rxjava2:2.1.0'
-    implementation 'androidx.room:room-guava:2.1.0'
-    testImplementation 'androidx.room:room-testing:2.1.0'
+    implementation 'androidx.room:room-runtime:2.2.0'
+    kapt 'androidx.room:room-compiler:2.2.0'
+    implementation 'androidx.room:room-rxjava2:2.2.0'
+    implementation 'androidx.room:room-guava:2.2.0'
+    testImplementation 'androidx.room:room-testing:2.2.0'
 
     //stetho
     implementation "com.facebook.stetho:stetho:$stethoVersion"
 
+}
+kapt {
+    generateStubs = true
 }

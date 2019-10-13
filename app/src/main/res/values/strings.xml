@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Map Breadcrumbs</string>
+    <string name="some_error">Bilinmedik bir hata oluştu</string>
 </resources>
