@@ -11,14 +11,13 @@ import javax.inject.Inject
 class SignUpFragment : BaseFragment(), ISignUpView {
 
     override fun setUp(view: View) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     @Inject
     lateinit var mPresenter: ISignUpPresenter<ISignUpView>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_sign_up_layout, container, false)
+        val view = inflater.inflate(R.layout.fragment_sign_up, container, false)
 
         return view
     }

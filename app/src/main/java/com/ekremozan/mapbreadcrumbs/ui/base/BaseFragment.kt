@@ -7,14 +7,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
-import androidx.fragment.app.Fragment
 import com.ekremozan.mapbreadcrumbs.utils.CommonUtils
-import dagger.android.DaggerFragment
+import dagger.android.support.DaggerFragment
 
 
 abstract class BaseFragment: DaggerFragment(), IView {
 
-    var baseActivity: BaseActivity? = null
+    private var baseActivity: BaseActivity? = null
     private var mProgressDialog: ProgressDialog? = null
 
 

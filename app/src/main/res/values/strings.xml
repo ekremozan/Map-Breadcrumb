@@ -1,4 +1,12 @@
 <resources>
+
     <string name="app_name">Map Breadcrumbs</string>
     <string name="some_error">Bilinmedik bir hata oluştu</string>
+    <string name="username">Kullanıcı Adı</string>
+    <string name="password">Parola</string>
+    <string name="login">Giriş Yap</string>
+    <string name="forgetYourPassword">Parolanızı mı unuttunuz?</string>
+    <string name="dontHaveAnAccountSignUp">Üye değil misiniz? Üye ol</string>
+    <string name="register">Kayıt Ol</string>
+    <string name="service_description">Her 15 dakikada bir bulunduğunuz konumu veritabanına kayıt eder.</string>
 </resources>

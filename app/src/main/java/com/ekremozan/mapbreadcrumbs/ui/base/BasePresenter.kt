@@ -6,13 +6,13 @@ import javax.inject.Inject
 
 open class BasePresenter<V : IView> @Inject
 constructor(
-    val compositeDisposable: CompositeDisposable
+    private val compositeDisposable: CompositeDisposable
 ) : IPresenter<V> {
 
     var mvpView: V? = null
         private set
 
-    val isViewAttached: Boolean
+    private val isViewAttached: Boolean
         get() = mvpView != null
 
     override fun onAttach(mvpView: V) {

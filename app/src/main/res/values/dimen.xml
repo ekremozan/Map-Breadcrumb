@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding">16dp</dimen>
+    <dimen name="topViewMargin10">10dp</dimen>
+    <dimen name="topViewMargin20">20dp</dimen>
+    <dimen name="topViewMargin30">30dp</dimen>
+    <dimen name="bottomSignButtonMargin">150dp</dimen>
+
+    <dimen name="textSizeTitle">50sp</dimen>
+</resources>

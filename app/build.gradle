@@ -17,7 +17,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug{
+            buildConfigField "String", "SERVER_URL", "\"https://breadcrumbs.ekremozan.com/api/\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
+            buildConfigField "String", "SERVER_URL", "\"https://breadcrumbs.ekremozan.com/api/\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -28,6 +34,11 @@ android {
     }
 }
 
+kapt {
+    generateStubs = true
+}
+
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -37,8 +48,10 @@ dependencies {
 
     //test
     testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.23.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
 
     //dagger
     implementation "com.google.dagger:dagger:$dagger2Version"
@@ -62,16 +75,15 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion" // use -ktx for Kotlin
 
     //room
-    implementation 'androidx.room:room-runtime:2.2.0'
-    kapt 'androidx.room:room-compiler:2.2.0'
-    implementation 'androidx.room:room-rxjava2:2.2.0'
-    implementation 'androidx.room:room-guava:2.2.0'
-    testImplementation 'androidx.room:room-testing:2.2.0'
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-rxjava2:$roomVersion"
+    implementation "androidx.room:room-guava:$roomVersion"
+    testImplementation "androidx.room:room-testing:$roomVersion"
 
     //stetho
     implementation "com.facebook.stetho:stetho:$stethoVersion"
 
-}
-kapt {
-    generateStubs = true
+
+
 }

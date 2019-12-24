@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import android.widget.Toast
@@ -20,6 +21,8 @@ abstract class BaseActivity : DaggerAppCompatActivity(), IView, BaseFragment.Cal
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        actionBar?.hide()
     }
 
     override fun showSnackbar(message: String?) {
@@ -74,11 +77,11 @@ abstract class BaseActivity : DaggerAppCompatActivity(), IView, BaseFragment.Cal
         }
     }
 
-    override fun onFragmentDetached(tag: String) {
+    override fun onFragmentAttached() {
 
     }
 
-    override fun onFragmentAttached() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onFragmentDetached(tag: String) {
+
     }
 }

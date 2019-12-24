@@ -11,7 +11,6 @@ abstract class SignInFragmentModule {
 
         @JvmStatic
         @Provides
-        fun provideSignInPresenter(presenter: SignInPresenter<ISignInView>): ISignInPresenter<ISignInView> =
-            presenter
+        fun provideSignInPresenter(presenter: SignInPresenter<ISignInView>): ISignInPresenter<ISignInView> = presenter
     }
 }

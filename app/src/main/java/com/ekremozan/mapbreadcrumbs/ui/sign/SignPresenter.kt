@@ -14,7 +14,6 @@ constructor(compositeDisposable: CompositeDisposable) : BasePresenter<V>(composi
 
     override fun onAttach(view: V) {
         super.onAttach(view)
-
     }
 
 }
